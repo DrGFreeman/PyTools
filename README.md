@@ -78,7 +78,8 @@ Returns `True` if elapsed time is within (less than) `delay` argument, `False` o
     t = Timer()
     while t.isWithin(5):
       # Code here will execute until 5 seconds have passed since
-      # instantiation of t.```
+      # instantiation of t.
+```
 
 * `.pause()`  
 Pauses the timer.
@@ -96,4 +97,5 @@ Sleeps until elapsed time reaches the time specified by the `delay` argument. If
         # Wait until a time step of 0.1 second is reached. This ensures the
         # loop will execute at fixed time steps, regardless of the code
         # execution time, provided it does not exceed the specified delay value.
-        t.sleepToElapsed(0.1)```
+        t.sleepToElapsed(0.1)
+```
