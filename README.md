@@ -5,10 +5,10 @@ This repository contains various general use python tools split into different m
 ## Modules
 
 ### filters
-This module defines filters for data processing. This module required [Numpy](http://www.numpy.org/).
+This module defines filters for data processing. This module requires [Numpy](http://www.numpy.org/).
 
 #### Class `Filter1D`
-This class defines a unidimensional (1D) filter useful for real-time smoothing of time series data such as sensor signals. The filter stores a certain number of data points defined by the `maxSize` argument passed to the `Filter1D()` contructor. As new data is added with the `.addDataPoint()` method, older data is eliminated so that the number of data points remains constant. Mean and median values of the last _n_ data points in the filter can be obtained with the `.getMean(windowSize)` and `.getMedian(windoSize)` methods where _n_ is defined by the `windoSize` argument.
+This class defines a one dimensional (1D) filter useful for real-time smoothing of time series data such as sensor signals. The filter stores a certain number of data points defined by the `maxSize` argument passed to the `Filter1D()` contructor. As new data is added with the `.addDataPoint()` method, older data is eliminated so that the number of data points remains constant. Mean and median values of the last _n_ data points in the filter can be obtained with the `.getMean(windowSize)` and `.getMedian(windoSize)` methods where _n_ is defined by the `windoSize` argument.
 
 * `Filter1D(maxSize=3)`  
 Class constructor. `maxSize` argument defines the size (number of data points) of the signal to be kept. `maxSize` must be an odd integer >= 3. If `maxSize` is not defined, it is by default set to 3.
@@ -78,7 +78,7 @@ Returns `True` if elapsed time is within (less than) `delay` argument, `False` o
     t = Timer()
     while t.isWithin(5):
       # Code here will execute until 5 seconds have passed since
-      # instantiation of t.
+      # instantiation of t.```
 
 * `.pause()`  
 Pauses the timer.
@@ -96,4 +96,4 @@ Sleeps until elapsed time reaches the time specified by the `delay` argument. If
         # Wait until a time step of 0.1 second is reached. This ensures the
         # loop will execute at fixed time steps, regardless of the code
         # execution time, provided it does not exceed the specified delay value.
-        t.sleepToElapsed(0.1)
+        t.sleepToElapsed(0.1)```
