@@ -4,6 +4,10 @@ This repository contains various general use python tools split into different m
 
 ## Modules
 
+* [filters](#filters) (filters.py)
+* [timedpid](#timedpid) (timedpid.py)
+* [timer](#timer) (timer.py)
+
 ### filters
 This module defines filters for data processing. This module requires [Numpy](http://www.numpy.org/).
 
