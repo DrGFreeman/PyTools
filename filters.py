@@ -39,10 +39,10 @@ class Filter1D:
             if maxSize % 2 == 1 and maxSize >= 3:
                 self._maxSize = maxSize
             else:
-                raise ValueError
+                raise ValueError("maxSize must be an odd integer >= 3")
         except ValueError:
-            raise ValueError("maxSize must be an odd integer >= 3")
-        self._data = np.zeros(1)
+            raise
+        self._data = np.ndarray(0)
 
     def addDataPoint(self, dataPoint):
         """Adds new data point(s) to the data array. If the data array size
@@ -69,14 +69,16 @@ class Filter1D:
         greater than maxSize, windowSize will be automatically set to maxSize
         and the mean of the entire data array will be returned."""
         try:
+            if self._data.size == 0:
+                raise RuntimeError("Filter1D data is empty. Call Filter1D.addDataPoint() to add data prior calling Filter1D.getMean().")
             if type(windowSize) is int:
                 if windowSize <= 0 or windowSize > self._maxSize:
                     windowSize = self._maxSize
                 return np.mean(self._data[-windowSize:])
             else:
-                raise TypeError
-        except TypeError:
-            raise TypeError("windowSize must be an integer")
+                raise TypeError("windowSize must be an integer")
+        except TypeError or RuntimeError:
+            raise
 
     def getMedian(self, windowSize=0):
         """Returns the median of the last n points from the data array where n
@@ -84,11 +86,13 @@ class Filter1D:
         is not specified or is set to 0, windowSize will be automatically set
         to maxSize and the median of the entire data array will be returned."""
         try:
+            if self._data.size == 0:
+                raise RuntimeError("Filter1D data is empty. Call Filter1D.addDataPoint() to add data prior calling Filter1D.getMedian().")
             if windowSize <= 0:
                 windowSize = self._maxSize
             if windowSize % 2 == 1 and windowSize <= self._maxSize:
                 return np.median(self._data[-windowSize:])
             else:
-                raise ValueError
+                raise ValueError("windowSize must be an odd integer <= maxSize")
         except ValueError:
-            raise ValueError("windowSize must be an odd integer <= maxSize")
+            raise
