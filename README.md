@@ -5,6 +5,7 @@ This repository contains various general use python tools split into different m
 ## Modules
 
 * [filters](#filters) (filters.py)
+* [pytools](#pytools) (pytools.py)
 * [timedpid](#timedpid) (timedpid.py)
 * [timer](#timer) (timer.py)
 
@@ -31,6 +32,13 @@ Returns the mean of the last _n_ points from the data array where _n_ is defined
 
 * `.getMedian(windowSize=0)`  
 Returns the median of the last _n_ points from the data array where _n_ equals `windowSize`. `windowSize` must be an odd integer. If `windowSize` is not specified or is set to 0, `windowSize` will be automatically set to `maxSize` and the median of the entire data array will be returned.
+
+### pytools
+
+This module defines various useful functions.
+
+* `.constrain(value, min, max)`  
+Returns the `value` argument constrained within the range defined by the `min` and `max` arguments. If `value` is within `min` and `max`, it will be returned without modification. If `value` is smaller than `min` or greater than `max` the returned value will equal `min` or `max` respectively.
 
 ### timedpid
 
