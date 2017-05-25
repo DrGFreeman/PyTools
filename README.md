@@ -5,7 +5,7 @@ This repository contains various general use python tools split into different m
 ## Modules
 
 * [filters](#filters) (filters.py)
-* [pytools](#pytools) (pytools.py)
+* [pytools](#pytools-1) (pytools.py)
 * [timedpid](#timedpid) (timedpid.py)
 * [timer](#timer) (timer.py)
 
