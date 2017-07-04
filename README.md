@@ -96,6 +96,9 @@ Returns `True` if elapsed time is within (less than) `delay` argument, `False` o
 * `.pause()`  
 Pauses the timer.
 
+* `.reset()`  
+Resets the timer initial time to the current time.
+
 * `.resume()`  
 Resumes the timer following call to `.pause()` method.
 
