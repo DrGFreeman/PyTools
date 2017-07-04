@@ -66,11 +66,6 @@ class Timer:
         self.pauseElapsed = 0
         self.initTime = time.time()
 
-    def pause(self):
-        """Pauses the timer."""
-        self.pauseInitTime = time.time()
-        self.paused = True
-
     def resume(self):
         """Resumes the timer following call to .pause() method."""
         if self.paused:
