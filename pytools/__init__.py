@@ -1,4 +1,4 @@
-# pytools.py
+# pytools
 # Source: https://github.com/DrGFreeman/PyTools
 #
 # MIT License
