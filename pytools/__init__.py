@@ -27,14 +27,12 @@
 
 def constrain(value, min, max):
     """Returns value constrained between min and max arguments."""
-    try:
-        if min < max:
-            if value < min:
-                value = min
-            elif value > max:
-                value = max
-            return value
-        else:
-            raise ValueError("min argument must be smaller than max argument")
-    except ValueError:
-        raise
+    
+    if min < max:
+        if value < min:
+            value = min
+        elif value > max:
+            value = max
+        return value
+    else:
+        raise ValueError("min argument must be smaller than max argument")
