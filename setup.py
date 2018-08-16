@@ -9,4 +9,4 @@ setup(name='pytools',
       licence='MIT',
       packages=find_packages(exclude=('tests',)),
       python_requires='>=3.4.0',
-      install_requires='numpy')
+      install_requires=['numpy', 'pytest'])
