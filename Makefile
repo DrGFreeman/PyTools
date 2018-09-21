@@ -1,2 +1,2 @@
 test:
-	python -m pytest pytools
+	python -m pytest -v pytools
