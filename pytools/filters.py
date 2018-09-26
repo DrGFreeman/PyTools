@@ -3,7 +3,7 @@
 #
 # MIT License
 #
-# Copyright (c) 2017 Julien de la Bruere-Terreault <drgfreeman@tuta.io>
+# Copyright (c) 2018 Julien de la Bruere-Terreault <drgfreeman@tuta.io>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# This module defines different filters for signal processing
+# This module defines different filters for real-time signal processing
 
 import numpy as np
 
