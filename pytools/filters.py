@@ -81,7 +81,9 @@ class Filter1D:
         to maxSize and the median of the entire data array will be returned."""
         if self._data.size == 0:
             raise RuntimeError("Filter1D data is empty. Call Filter1D.addDataPoint() to add data prior calling Filter1D.getMedian().")
-        if windowSize <= 0:
+        if type(windowSize) is not int:
+            raise TypeError("windowSize must be an integer")
+        if windowSize <= 0 or windowSize > self._maxSize:
             windowSize = self._maxSize
         if windowSize % 2 == 1 and windowSize <= self._maxSize:
             return np.median(self._data[-windowSize:])

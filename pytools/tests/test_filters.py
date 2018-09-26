@@ -61,11 +61,10 @@ def test_Filter1D_getMedian():
     # Add some data
     f.addDataPoint(np.arange(3, 8))
     # Test windowSize not an integer
-        # To-do: Implement class functionality first
+    with pytest.raises(TypeError):
+        f.getMedian(windowSize=3.)
     # Test windowSize > maxSize
-        # To-do: Change behavior so that windowSize gets set to _maxSize
-    with pytest.raises(ValueError):
-        f.getMedian(windowSize=9)
+    assert f.getMedian(windowSize=9) == 5.
     # Test windoSize <= 0; windoSize set to _maxSize
     assert f.getMedian(windowSize=-1) == 5.
     # Test windowSize is even
